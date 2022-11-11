@@ -19,13 +19,13 @@
     <meta name="description" content="目录[TOC]   参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C知识">
-<meta property="og:url" content="http://example.com/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:url" content="http://example.com/2022/11/09/C%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Lowry&#39;s blog">
 <meta property="og:description" content="目录[TOC]   参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.ax1x.com/2022/11/11/zC4fKJ.md.jpg">
 <meta property="article:published_time" content="2022-11-09T12:44:15.000Z">
-<meta property="article:modified_time" content="2022-11-11T10:50:13.085Z">
+<meta property="article:modified_time" content="2022-11-11T15:39:03.578Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -81,21 +81,6 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
   
@@ -112,7 +97,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Lowry</strong>
+      <strong>Fluid</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -132,7 +117,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                主页
+                Home
               </a>
             </li>
           
@@ -144,7 +129,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                目录
+                Archives
               </a>
             </li>
           
@@ -168,7 +153,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                Tags
               </a>
             </li>
           
@@ -180,7 +165,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于作者
+                About
               </a>
             </li>
           
@@ -335,7 +320,7 @@
 <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
 <li>变量：声明变量：</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">1</span>  <span class="comment">//整型</span></span><br><span class="line"> <span class="type">double</span> score = <span class="number">2.3</span>    <span class="comment">//小数</span></span><br><span class="line"> <span class="type">char</span> gender = <span class="string">&#x27;A&#x27;</span>    <span class="comment">//字符</span></span><br><span class="line"> <span class="type">char</span> name[]  = <span class="string">&quot;勇士总冠军&quot;</span>    <span class="comment">//字符串</span></span><br><span class="line"> <span class="type">long</span> num1 = <span class="number">123456</span>；<span class="comment">//如果输出的是long，则用 %ld 输出</span></span><br><span class="line"> <span class="type">long</span> <span class="type">long</span> num2 = <span class="number">12345678</span>；  <span class="comment">//如果输出的是long long ，则用 %lld 输出</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;num=%d score=%.2f gender=%c name=%s&quot;</span>,num,score,gender,name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> num = <span class="hljs-number">1</span>  <span class="hljs-comment">//整型</span><br> <span class="hljs-type">double</span> score = <span class="hljs-number">2.3</span>    <span class="hljs-comment">//小数</span><br> <span class="hljs-type">char</span> gender = <span class="hljs-string">&#x27;A&#x27;</span>    <span class="hljs-comment">//字符</span><br> <span class="hljs-type">char</span> name[]  = <span class="hljs-string">&quot;勇士总冠军&quot;</span>    <span class="hljs-comment">//字符串</span><br> <span class="hljs-type">long</span> num1 = <span class="hljs-number">123456</span>；<span class="hljs-comment">//如果输出的是long，则用 %ld 输出</span><br> <span class="hljs-type">long</span> <span class="hljs-type">long</span> num2 = <span class="hljs-number">12345678</span>；  <span class="hljs-comment">//如果输出的是long long ，则用 %lld 输出</span><br> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;num=%d score=%.2f gender=%c name=%s&quot;</span>,num,score,gender,name)<br></code></pre></td></tr></table></figure>
 
 
 
@@ -469,7 +454,7 @@
 <li><p>char类型是可以进行运算的，相当于ASCII码对应的整数。</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> c1 = <span class="string">&#x27;a&#x27;</span>;	<span class="comment">//&#x27;a&#x27;对应的ASCII为97</span></span><br><span class="line"><span class="type">int</span> num1 = c1 +<span class="number">10</span>;</span><br><span class="line"><span class="type">char</span> c2 = <span class="string">&#x27;a&#x27;</span> + <span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;num1=%d c2=%c &quot;</span>,num1,c2)	<span class="comment">//num1=107 c2=98</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span> c1 = <span class="hljs-string">&#x27;a&#x27;</span>;	<span class="hljs-comment">//&#x27;a&#x27;对应的ASCII为97</span><br><span class="hljs-type">int</span> num1 = c1 +<span class="hljs-number">10</span>;<br><span class="hljs-type">char</span> c2 = <span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;num1=%d c2=%c &quot;</span>,num1,c2)	<span class="hljs-comment">//num1=107 c2=98</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="字符类型本质探讨"><a href="#字符类型本质探讨" class="headerlink" title="字符类型本质探讨"></a>字符类型本质探讨</h3><ul>
@@ -492,7 +477,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="type">float</span> num = str;	<span class="comment">//从低精度char自动转换成高精度float</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%f&quot;</span>, num);	<span class="comment">//97.000000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span> str = <span class="hljs-string">&#x27;a&#x27;</span>;<br><span class="hljs-type">float</span> num = str;	<span class="hljs-comment">//从低精度char自动转换成高精度float</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%f&quot;</span>, num);	<span class="hljs-comment">//97.000000</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <p>自动类型转换细节说明：</p>
@@ -508,7 +493,7 @@
 <li>将精度高的数据类型转换为精度小的数据类型。使用时要加上强制转换符()，但可能造成精度<br>降低或溢出,格外要汪意。</li>
 <li>强制类型转换一般格式如：（类型名）表达式，这种强制类型转换操作并不改变操作数本身</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">double</span> d = <span class="number">156.99</span>;<span class="comment">//转换后d任然是double类型</span></span><br><span class="line">    <span class="type">int</span> num = (<span class="type">int</span>)d;<span class="comment">//这里不是四舍五入，而是直接截断小数点后面的部分</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">double</span> d = <span class="hljs-number">156.99</span>;<span class="hljs-comment">//转换后d任然是double类型</span><br>    <span class="hljs-type">int</span> num = (<span class="hljs-type">int</span>)d;<span class="hljs-comment">//这里不是四舍五入，而是直接截断小数点后面的部分</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>当进行数据的从 精度高 一&gt; 精度低，就需要使用到强制转换</p>
@@ -516,14 +501,14 @@
 <li><p><strong>强转符号只针对于最近的操作数有效</strong>,往往会使用小括号提升优先级</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = (<span class="type">int</span>)<span class="number">2.4</span>*<span class="number">12</span>;<span class="comment">//24</span></span><br><span class="line"><span class="type">int</span> c = (<span class="type">int</span>)(<span class="number">2.4</span>*<span class="number">12</span>);<span class="comment">//28</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> x = (<span class="hljs-type">int</span>)<span class="hljs-number">2.4</span>*<span class="hljs-number">12</span>;<span class="hljs-comment">//24</span><br><span class="hljs-type">int</span> c = (<span class="hljs-type">int</span>)(<span class="hljs-number">2.4</span>*<span class="hljs-number">12</span>);<span class="hljs-comment">//28</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><ul>
 <li>简单来说，指针表示一个地址</li>
 <li>&amp;表示取地址</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zC4fKJ"><img src="https://s1.ax1x.com/2022/11/11/zC4fKJ.md.jpg" srcset="/img/loading.gif" lazyload alt="zC4fKJ.jpg" border="0" /></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zC4fKJ"><img src="https://s1.ax1x.com/2022/11/11/zC4fKJ.md.jpg" srcset="/img/loading.gif" lazyload alt="zC4fKJ.md.jpg"></a></p>
 <hr>
 <p>[^分割线更新时间]: 2022年11月11日 18：47</p>
 
@@ -551,7 +536,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>C知识</div>
-      <div>http://example.com/2022/11/09/C的知识/</div>
+      <div>http://example.com/2022/11/09/C知识/</div>
     </div>
     <div class="license-meta">
       
