@@ -6,18 +6,20 @@
   
   <title>C知识 | Lowry&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf (“Lowry is">
+  <meta name="description" content="目录[TOC]   参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C知识">
-<meta property="og:url" content="http://example.com/2022/11/09/C%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:url" content="http://example.com/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Lowry&#39;s blog">
-<meta property="og:description" content="参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf (“Lowry is">
+<meta property="og:description" content="目录[TOC]   参考b站尚硅谷的c语言教程所制作！！！  基本知识点： 计算机的单位：bit；byte；kb；mb；gb；tb；pb  8 bit （比特位） &#x3D; 1 byte （字节） ；  常用转义字符：  \t : 一个制表位，实现对齐的功能 \n : 换行符 \ : 一个\ &quot; : 一个” &#39; : 一个’ \ : 反斜杠 \r : 一个回车 printf">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s1.ax1x.com/2022/11/11/zCs4Yj.jpg">
 <meta property="article:published_time" content="2022-11-09T12:44:15.000Z">
-<meta property="article:modified_time" content="2022-11-09T12:47:34.447Z">
+<meta property="article:modified_time" content="2022-11-11T08:58:07.567Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/11/11/zCs4Yj.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Lowry's blog" type="application/atom+xml">
   
@@ -74,9 +76,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-C知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C的知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/11/09/C%E7%9F%A5%E8%AF%86/" class="article-date">
+    <a href="/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/" class="article-date">
   <time class="dt-published" datetime="2022-11-09T12:44:15.000Z" itemprop="datePublished">2022-11-09</time>
 </a>
     
@@ -96,7 +98,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
+<hr>
+<blockquote>
 <p>参考b站尚硅谷的c语言教程所制作！！！</p>
 </blockquote>
 <h3 id="基本知识点："><a href="#基本知识点：" class="headerlink" title="基本知识点："></a>基本知识点：</h3><ul>
@@ -288,13 +293,9 @@
 <li>C语言标准(C99)提供了_Bool型，_Bool仍是整数类型，但与一般整型不同的是<br>_Bool变量只能赋值为0或1，非0的值都会被存储为1，C99还提供了一个头文件<br> &lt;stdbool.h&gt; 定义了 bool 代表_Bool , true代表1 ，false代表0。只要导入 stdbool.h，就<br>能方便的操作布尔类型了，比如 bool flag &#x3D; false</li>
 </ul>
 <hr>
-<h3 id="基本数据类型转换"><a href="#基本数据类型转换" class="headerlink" title="基本数据类型转换"></a>基本数据类型转换</h3><ul>
-<li><p>自动类型转换</p>
-</li>
-<li><p>当C程序在进行 <em>赋值</em> 或者 <em>转换</em>时，精度小的类型 <em>自动转换</em> 成 <em>精度大的</em> 数据类型，这个就是自动类型转换。</p>
-</li>
-<li><p>数据类型按精度（容量）大小排序：</p>
-<ul>
+<h3 id="基本数据类型转换"><a href="#基本数据类型转换" class="headerlink" title="基本数据类型转换"></a>基本数据类型转换</h3><h4 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h4><ul>
+<li>当C程序在进行 <em>赋值</em> 或者 <em>转换</em>时，精度小的类型 <em>自动转换</em> 成 <em>精度大的</em> 数据类型，这个就是自动类型转换。</li>
+<li>数据类型按精度（容量）大小排序：<ul>
 <li>short - int - unsigned int - long - unsigned long - float - double - long double</li>
 </ul>
 </li>
@@ -310,11 +311,32 @@
 </ul>
 <hr>
 <p>[^分割线更新时间]: 2022年11月9日 20:20</p>
+<hr>
+<h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h4><ul>
+<li>将精度高的数据类型转换为精度小的数据类型。使用时要加上强制转换符()，但可能造成精度<br>降低或溢出,格外要汪意。</li>
+<li>强制类型转换一般格式如：（类型名）表达式，这种强制类型转换操作并不改变操作数本身</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">double</span> d = <span class="number">156.99</span>;<span class="comment">//转换后d任然是double类型</span></span><br><span class="line">    <span class="type">int</span> num = (<span class="type">int</span>)d;<span class="comment">//这里不是四舍五入，而是直接截断小数点后面的部分</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>当进行数据的从 精度高 一&gt; 精度低，就需要使用到强制转换</p>
+</li>
+<li><p><strong>强转符号只针对于最近的操作数有效</strong>,往往会使用小括号提升优先级</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = (<span class="type">int</span>)<span class="number">2.4</span>*<span class="number">12</span>;<span class="comment">//24</span></span><br><span class="line"><span class="type">int</span> c = (<span class="type">int</span>)(<span class="number">2.4</span>*<span class="number">12</span>);<span class="comment">//28</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><ul>
+<li>简单来说，指针表示一个地址</li>
+<li>&amp;表示取地址</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zCs4Yj"><img src="https://s1.ax1x.com/2022/11/11/zCs4Yj.jpg" alt="zCs4Yj.jpg"></a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/C%E7%9F%A5%E8%AF%86/" data-id="cla9mx67e0000wcu7hevd5qyl" data-title="C知识" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/" data-id="clac9nxxl0000u0u7e5mxcn7o" data-title="C知识" class="article-share-link">Share</a>
       
       
       
@@ -381,7 +403,7 @@
       <ul>
         
           <li>
-            <a href="/2022/11/09/C%E7%9F%A5%E8%AF%86/">C知识</a>
+            <a href="/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/">C知识</a>
           </li>
         
           <li>
