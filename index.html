@@ -93,7 +93,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
+<hr>
+<blockquote>
 <p>参考b站尚硅谷的c语言教程所制作！！！</p>
 </blockquote>
 <h3 id="基本知识点："><a href="#基本知识点：" class="headerlink" title="基本知识点："></a>基本知识点：</h3><ul>
@@ -581,30 +584,44 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num1 = <span class="number">210</span>;<span class="comment">//十进制，没有前缀</span></span><br><span class="line"><span class="type">int</span> num2 = <span class="number">0210</span>;<span class="comment">//八进制，以0开头</span></span><br><span class="line"><span class="type">int</span> num3 = <span class="number">0x1210</span>;<span class="comment">//十六进制，以0x开头</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><ol>
-<li><p>二进制转换成十进制示例：</p>
-<ol>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例：<ol>
 <li>规则：从最低位开始，将每个位上的数提取出来，乘以2的(位数-1)次方，然后求和。</li>
 <li>案例：请将二进制1011转成十进制的数</li>
 </ol>
 </li>
-<li><p>八进制转换成十进制示例</p>
-<ol>
+<li><em><strong>八进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例<ol>
 <li>规则：从最低位开始，将每个位上的数提取出来，乘以8的(位数-1)次方，然后求和。</li>
 <li>案例：请将0123转成十进制的数</li>
 </ol>
 </li>
-<li><p>十六进制转换成十进制示例</p>
-<ol>
+<li><em><strong>十六进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例<ol>
 <li>规则：从最低位开始，将每个位上的数提取出来，乘以16的(位数-1)次方，然后求和。</li>
 <li>案例：请将0x34A转成十进制的数</li>
 </ol>
 </li>
-<li><p>十进制转二进制</p>
-<ol>
+<li>***十进制 ***转 <em><strong>二进制</strong></em><ol>
 <li>规则：将该数不断除以2，直到商为0为止，然后将每步得到的余数倒过来，就是对应的二进制</li>
+<li><a target="_blank" rel="noopener" href="https://imgse.com/i/zFzOud"><img src="https://s1.ax1x.com/2022/11/13/zFzOud.jpg" alt="zFzOud.jpg"></a></li>
 </ol>
 </li>
+<li><em><strong>十讲制</strong></em> 转换成 <em><strong>八进制</strong></em>，规则：将该数不断除以8，直到商为0为止，然后将每步得到的余数倒过来，就是对应的八进制。</li>
+<li><em><strong>十进制</strong></em> 转换成 <em><strong>十六进制</strong></em>，规则：将该数不断除以16，直到商为0为止，然后将每步得到的余数倒过来，就是对应的十六进制。</li>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>八进制</strong></em>，规则：从低位开始,将二进制数每三位一组，转成对应的八进制数即可。<br>案例：请将11010101转成八进制：*<u>11</u>* <em><u>010</u></em> <em><u>101</u></em>&#x3D;&gt; 0325</li>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>十六进制</strong></em>，规则：低位开始，将二进制数每四位一组，转成对应的十六进制数即可。 &#x3D;&gt; 案例：请将11010101转成十六进制 : <em><u>1101</u></em> <em><u>0101</u></em> &#x3D; 0xD5</li>
+<li><em><strong>八进制</strong></em> 转换成 <em><strong>二进制</strong></em>,规则：将八进制数每1位,转成对应的一个3位的二进制数即可。</li>
+<li><em><strong>十六进制</strong></em> 转换成 <em><strong>二进制</strong></em>, 规则：将十六进制数每1位,转成对应的4位的一个二进制数即可。</li>
 </ol>
+<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h3><ul>
+<li>对于有符号的而言:<ol>
+<li>二进制的最高位是符号位:0表示正数,1表示负数</li>
+<li>正数的原码，反码，补码都一样（三码合一）</li>
+<li>负数的反码&#x3D;它的原码符号位不变，其它位取反(0-&gt;1,1-&gt;0）</li>
+<li>负数的补码&#x3D;它的反码+1</li>
+<li>0的反码，补码都是0</li>
+<li>在计算机运算的时候，都是以补码的方式来运算的</li>
+</ol>
+</li>
+</ul>
 
       
     </div>
