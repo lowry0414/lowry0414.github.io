@@ -1,0 +1,1030 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="C语言传递参数(或者赋值)可以是值传递，也可以传递指针，传递指针也叫地址传递。 默认传递值的类型：基本数据类型(整型类型、小数类型，字符类型)，结构体共用体 默认传递地址的类似：指针、数组 常量是固定值，在程序执行期间不能改变。这些固定的值，又叫做字面量 常量可以是任何的基本数据类型，比如整数常量、浮点常量、字符常量，或字符串字面值，也有枚举常量。 常量的值在定义后不能进行修改  整数常量 整数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言基础知识_第二章">
+<meta property="og:url" content="http://example.com/2022/11/21/C%E7%9A%84%E7%9F%A5%E8%AF%86-01/index.html">
+<meta property="og:site_name" content="Lowry&#39;s blog">
+<meta property="og:description" content="C语言传递参数(或者赋值)可以是值传递，也可以传递指针，传递指针也叫地址传递。 默认传递值的类型：基本数据类型(整型类型、小数类型，字符类型)，结构体共用体 默认传递地址的类似：指针、数组 常量是固定值，在程序执行期间不能改变。这些固定的值，又叫做字面量 常量可以是任何的基本数据类型，比如整数常量、浮点常量、字符常量，或字符串字面值，也有枚举常量。 常量的值在定义后不能进行修改  整数常量 整数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/11/13/zFzOud.jpg">
+<meta property="article:published_time" content="2022-11-21T08:30:22.000Z">
+<meta property="article:modified_time" content="2022-11-21T08:35:09.522Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/11/13/zFzOud.jpg">
+  
+  
+  
+  <title>C语言基础知识_第二章 - Lowry&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C语言基础知识_第二章"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-21 16:30" pubdate>
+          2022年11月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言基础知识_第二章</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li>C语言传递参数(或者赋值)可以是值传递，也可以传递指针，传递指针也叫地址传递。</li>
+<li>默认传递值的类型：基本数据类型(整型类型、小数类型，字符类型)，结构体共用体</li>
+<li>默认传递地址的类似：指针、数组</li>
+<li>常量是固定值，在程序执行期间不能改变。这些固定的值，又叫做字面量</li>
+<li>常量可以是任何的基本数据类型，比如整数常量、浮点常量、字符常量，或字符串字面值，也有枚举常量。</li>
+<li>常量的值在定义后不能进行修改</li>
+</ul>
+<h3 id="整数常量"><a href="#整数常量" class="headerlink" title="整数常量"></a>整数常量</h3><ul>
+<li>整数常量可以是十进制、八进制或十六进制的常量。前缀指定基数：0x 或0X表示十六进制，0表示八进制，不带前缀则默认表示十进制。</li>
+<li>整数常量也可以带一个后缀，后缀是U和L的组合，U表示无符号整数（unsigned），L表示长整数（long）。</li>
+<li>后缀可以是大写，也可以是小写，U和L的顺序任意</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">14</th>
+<th align="center">十进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0414</td>
+<td align="center">八进制</td>
+</tr>
+<tr>
+<td align="center">0x4b</td>
+<td align="center">十六进制</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td align="center">整数</td>
+</tr>
+<tr>
+<td align="center">30u</td>
+<td align="center">无符号整数</td>
+</tr>
+<tr>
+<td align="center">30l</td>
+<td align="center">长整数</td>
+</tr>
+<tr>
+<td align="center">30ul</td>
+<td align="center">无符号长整数</td>
+</tr>
+</tbody></table>
+<h3 id="常量的定义"><a href="#常量的定义" class="headerlink" title="常量的定义"></a>常量的定义</h3><ul>
+<li>两种方式：使用#define预处理器、使用const关键字</li>
+<li>#define 预处理器定义常量的形式： #define 常量名 常量值（可以不用加分号）例：#define A 1</li>
+<li>const关键字定义常量的形式： const 数据类型 常量名 &#x3D; 常量值；（要加分号，因为这是个语句）例：const int A &#x3D; 3;</li>
+</ul>
+<h4 id="const-和-define的区别"><a href="#const-和-define的区别" class="headerlink" title="const 和 #define的区别"></a>const 和 #define的区别</h4><ol>
+<li>const定义的常量时，带类型，define不带类型</li>
+<li>const是在编译、运行的时候起作用，而define是在编译的预处理阶段起作用</li>
+<li>define只是简单的替换，没有类型检查。简单的字符串替换会导致边界效应。</li>
+<li>const常量可以进行调试的，define是不能进行调试的，主要是预编译阶段就已经替换掉了，调试的时候就没它了</li>
+<li>const不能重定义，不可以定义两个一样的，而define通过undef取消某个符号的定义再重新定义</li>
+<li>define可以配合#ifdef、#ifndef、#endif 来使用，可以让代码更加灵活，比如我们可以通过#define 来启动或者关闭调试信。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> A 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> B A+3</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> C A/B*3</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span> <span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;c= %d&quot;</span>,C);</span><br><span class="line">    <span class="comment">//分析：#define 只是做一个单纯的替换</span></span><br><span class="line">    <span class="comment">// C = A/A+3*3 = 1/1+3*3 = 1+9 = 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运算符介绍"><a href="#运算符介绍" class="headerlink" title="运算符介绍"></a>运算符介绍</h3><ul>
+<li>运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等<ol>
+<li>算术运算符（ + , - , * , &#x2F; , % )</li>
+<li>赋值运算符（ &#x3D;  +&#x3D;  -&#x3D;  …）</li>
+<li>关系运算符（比较运算符）（比如&gt; 、&gt;&#x3D;、&lt; 、&lt;&#x3D;、&#x3D;&#x3D;等等)</li>
+<li>逻辑运算符（&amp;&amp;逻辑与、 || 逻辑或 、!逻辑非)</li>
+<li>位运算符(&amp;按位与 、|按位或 、^按位异或 、～按位取反等等）</li>
+<li>三元运算符（表达式？表达1:表达2)</li>
+<li>算术运算符：常用的+，-，*，&#x2F;。还有一些需要注意的，如下表：</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>例子</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>正号</td>
+<td>+3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>-</td>
+<td>负号</td>
+<td>b&#x3D;4;-b</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模（取余）</td>
+<td>7%5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>++</br>++</td>
+<td>先运算再取值</br>先取值再运算</td>
+<td>a&#x3D;2;b&#x3D;++a</br>a&#x3D;2;b&#x3D;a++</td>
+<td>a&#x3D;3;b&#x3D;3</br>a&#x3D;3;b&#x3D;2</td>
+</tr>
+<tr>
+<td>–</br>–</td>
+<td>先运算再取值</br>先取值再运算</td>
+<td>a&#x3D;2;b&#x3D;–a</br>a&#x3D;2;b&#x3D;a–</td>
+<td>a&#x3D;1;b&#x3D;1</br>a&#x3D;1;b&#x3D;a</td>
+</tr>
+</tbody></table>
+<h4 id="算术运算细节说明"><a href="#算术运算细节说明" class="headerlink" title="算术运算细节说明"></a>算术运算细节说明</h4><ol>
+<li>对于除号“&#x2F;“，它的整数除和小数出是有区别的，整数之间做除法时，只保留整数部分而直接舍去小数部分。例：10&#x2F;4 &#x3D; 2</li>
+<li>当自增当做一个独立语言使用时，不管是++i；还是i++；都是一样的，等价</li>
+</ol>
+<h4 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h4><ol>
+<li>结合的方向只有三个是从右向左，其余都是从左向右</li>
+<li>所有的双目运算符中只有赋值运算符的结合方向是从右向左</li>
+<li>另外两个从右向左的结合运算符，一个是单目运算，还有一个是三目运算</li>
+<li>逗号的运算符优先级最低</li>
+<li>说一下优先级的大概的顺序：算术运算符&gt;关系运算符&gt;逻辑运算符(逻辑非！除外)&gt;赋值运算符&gt;逗号运算符</li>
+<li>注意不需要刻意的记,常用就慢慢有印象</li>
+</ol>
+<h4 id="关系运算符（比较运算符）"><a href="#关系运算符（比较运算符）" class="headerlink" title="关系运算符（比较运算符）"></a>关系运算符（比较运算符）</h4><ul>
+<li>关系运算符的结果要么是真（非0表示），要么是假（0表示）</li>
+<li>关系表达式常用于if结构的条件中或循环结构的条件中</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>例子</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td>相等于</td>
+<td>4&#x3D;&#x3D;3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td>不等于</td>
+<td>4!&#x3D;3</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>4&lt;3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+<td>4&gt;3</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>小于等于</td>
+<td>4&lt;&#x3D;3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>大于等于</td>
+<td>4&gt;&#x3D;3</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</br>假设：a&#x3D;1;b&#x3D;0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>称为逻辑与运算符。如果两个操作都非零(真）则条件为真，否则结果为0(假)</td>
+<td>(a&amp;&amp;b)为假</td>
+</tr>
+<tr>
+<td>||</td>
+<td>称为逻辑或运算符。如果有任意一个操作为真，则条件为真</td>
+<td>（a||b)为真</td>
+</tr>
+<tr>
+<td>!</td>
+<td>称为逻辑非运算符。用来逆转操作数的逻辑状态。</td>
+<td>!(a&amp;&amp;b)为真</td>
+</tr>
+</tbody></table>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a= <span class="number">10</span>,b= <span class="number">99</span>;</span><br><span class="line"><span class="comment">//说明:</span></span><br><span class="line"><span class="comment">//1. 在进行&amp;&amp; 操作时,如果第一个条件为 false,则后面的条件不再判断</span></span><br><span class="line"><span class="comment">//2.该现象称为短路现象，所以逻辑与也称为短路逻辑与</span></span><br><span class="line"><span class="keyword">if</span>(a &lt;<span class="number">2</span> &amp;&amp; ++b&gt;<span class="number">99</span>)&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;ok100&quot;</span>):</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;b= %d&quot;</span>, b); <span class="comment">//b=99</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> y = <span class="number">0</span>;</span><br><span class="line">    <span class="type">short</span> z = <span class="number">42</span>;</span><br><span class="line">    <span class="keyword">if</span>((z++ == <span class="number">42</span>)&amp;&amp;(y=<span class="number">1</span>))&#123;					<span class="comment">//z=43,y=1</span></span><br><span class="line">        z++;							   <span class="comment">//z=44</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((x=<span class="number">0</span>)||(++z==<span class="number">45</span>)&#123;					<span class="comment">//x=0;z=45</span></span><br><span class="line">        z++;							   <span class="comment">//z=46	</span></span><br><span class="line">    &#125;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;z=%d&quot;</span>,z);</span><br><span class="line">&#125;</span><br><span class="line">       <span class="comment">/*	一定要分清=和==的区别！！！	</span></span><br><span class="line"><span class="comment">       		=是赋值，==是比较是否相等</span></span><br><span class="line"><span class="comment">       */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ul>
+<li>就是将某个运算后的值，赋给指定的变量。</li>
+<li>赋值运算符有：&#x3D;，+&#x3D;，-&#x3D;，*&#x3D;，&#x2F;&#x3D;，%&#x3D;<ul>
+<li>例子：c +&#x3D; a;相当于c&#x3D; c+a; 其他以此类推。</li>
+</ul>
+</li>
+<li>位运算符：&lt;&lt;&#x3D;, &gt;&gt;&#x3D;, &amp;&#x3D;, ^&#x3D;, |&#x3D;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&lt;&lt;&#x3D;</th>
+<th>左移且赋值运算符</th>
+<th>C &lt;&lt;&#x3D;2 等同于 C&#x3D;C&lt;&lt; 2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;&gt;&#x3D;</td>
+<td>右移且赋值运算符</td>
+<td>C &gt;&gt;&#x3D;2 等同于 C&#x3D;C&gt;&gt; 2</td>
+</tr>
+<tr>
+<td>&amp;&#x3D;</td>
+<td>按位与且赋值运算符</td>
+<td>c &amp;&#x3D;2 等同于 c&#x3D;c&amp;2</td>
+</tr>
+<tr>
+<td>^&#x3D;</td>
+<td>按位异或且赋值运算符</td>
+<td>c^&#x3D;2 等同于 c&#x3D; c^2</td>
+</tr>
+<tr>
+<td>|&#x3D;</td>
+<td>按位或且赋值运算符</td>
+<td>c |&#x3D; 2 等同于 c&#x3D; c|2</td>
+</tr>
+</tbody></table>
+<h3 id="键盘输入语句"><a href="#键盘输入语句" class="headerlink" title="键盘输入语句"></a>键盘输入语句</h3><ul>
+<li>在编程中、需要接收用户输入的数据，就可以使用键盘输入语句来获取。lnputDemo.c</li>
+<li>步骤:<ol>
+<li>include &lt;stdio.h&gt;</li>
+<li>使用scanf 函数</li>
+<li>使用适当的格式参数接收输入</li>
+</ol>
+</li>
+</ul>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><ul>
+<li>对于整数，有四种表示方式<ol>
+<li>二进制:0,1，满2进1，C语言中没有二进制常数的表示方法</li>
+<li>八进制:0-7，满8进1。以数字0开头表示。</li>
+<li>十进制:0-9，满10进1</li>
+<li>十六进制：0-9及A-F，满16进1，以 <em>0x或0X</em> 开头表示。此处的A-F不区分大小写。如:0x21AF +1&#x3D; 0X21B0</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num1 = <span class="number">210</span>;<span class="comment">//十进制，没有前缀</span></span><br><span class="line"><span class="type">int</span> num2 = <span class="number">0210</span>;<span class="comment">//八进制，以0开头</span></span><br><span class="line"><span class="type">int</span> num3 = <span class="number">0x1210</span>;<span class="comment">//十六进制，以0x开头</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><ol>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例：<ol>
+<li>规则：从最低位开始，将每个位上的数提取出来，乘以2的(位数-1)次方，然后求和。</li>
+<li>案例：请将二进制1011转成十进制的数</li>
+</ol>
+</li>
+<li><em><strong>八进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例<ol>
+<li>规则：从最低位开始，将每个位上的数提取出来，乘以8的(位数-1)次方，然后求和。</li>
+<li>案例：请将0123转成十进制的数</li>
+</ol>
+</li>
+<li><em><strong>十六进制</strong></em> 转换成 <em><strong>十进制</strong></em>示例<ol>
+<li>规则：从最低位开始，将每个位上的数提取出来，乘以16的(位数-1)次方，然后求和。</li>
+<li>案例：请将0x34A转成十进制的数</li>
+</ol>
+</li>
+<li>**<em>十进制</em> **转 <em><strong>二进制</strong></em><ol>
+<li>规则：将该数不断除以2，直到商为0为止，然后将每步得到的余数倒过来，就是对应的二进制</li>
+<li><a target="_blank" rel="noopener" href="https://imgse.com/i/zFzOud"><img src="https://s1.ax1x.com/2022/11/13/zFzOud.jpg" srcset="/img/loading.gif" lazyload alt="zFzOud.jpg"></a></li>
+</ol>
+</li>
+<li><em><strong>十讲制</strong></em> 转换成 <em><strong>八进制</strong></em>，规则：将该数不断除以8，直到商为0为止，然后将每步得到的余数倒过来，就是对应的八进制。</li>
+<li><em><strong>十进制</strong></em> 转换成 <em><strong>十六进制</strong></em>，规则：将该数不断除以16，直到商为0为止，然后将每步得到的余数倒过来，就是对应的十六进制。</li>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>八进制</strong></em>，规则：从低位开始,将二进制数每三位一组，转成对应的八进制数即可。<br>案例：请将11010101转成八进制：*<u>11</u>* <em><u>010</u></em> <em><u>101</u></em>&#x3D;&gt; 0325</li>
+<li><em><strong>二进制</strong></em> 转换成 <em><strong>十六进制</strong></em>，规则：低位开始，将二进制数每四位一组，转成对应的十六进制数即可。 &#x3D;&gt; 案例：请将11010101转成十六进制 : <em><u>1101</u></em> <em><u>0101</u></em> &#x3D; 0xD5</li>
+<li><em><strong>八进制</strong></em> 转换成 <em><strong>二进制</strong></em>,规则：将八进制数每1位,转成对应的一个3位的二进制数即可。</li>
+<li><em><strong>十六进制</strong></em> 转换成 <em><strong>二进制</strong></em>, 规则：将十六进制数每1位,转成对应的4位的一个二进制数即可。</li>
+</ol>
+<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h3><ul>
+<li>对于有符号的而言:<ol>
+<li><p>二进制的最高位是符号位:0表示正数,1表示负数</p>
+</li>
+<li><p>正数的原码，反码，补码都一样（三码合一）</p>
+</li>
+<li><p>负数的反码&#x3D;它的原码符号位不变，其它位取反(0-&gt;1,1-&gt;0）</p>
+</li>
+<li><p>负数的补码&#x3D;它的反码+1</p>
+</li>
+<li><p>0的反码，补码都是0</p>
+</li>
+<li><p>在计算机运算的时候，都是以补码的方式来运算的</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="位运算符-重点难点"><a href="#位运算符-重点难点" class="headerlink" title="位运算符 _ (  重点难点  )"></a>位运算符 _ (  <em>重点难点</em>  )</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>按位与操作，按二进制进行“与”运算。</br>运算规则：0&amp;0&#x3D;0；0&amp;1&#x3D;0;1&amp;0&#x3D;01&amp;1&#x3D;1；</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或操作，按二进制进行“或”运算。</br>运算规则：0|1&#x3D;1；0|0&#x3D;0；1|1&#x3D;1；1|0&#x3D;1；</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或运算符，按二进制进行“异或”运算。</br>运算规则：0^0&#x3D;0;1^1&#x3D;0; 1^0&#x3D;1;0^1&#x3D;1;</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反运算符，按二进制位进行“取反”运算。</br>运算规则：~1&#x3D;0; ~0&#x3D;1;</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>二进制左移运算符。将一个运算对象的各二进制位全部左移若干位（左边的二进制位丢弃，右边补0 )</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>二进制右移运算符。将一个数的各二进制位全部右移若干位，正数左补0，负效左补1，右边丢弃。（说白了就是补符号位）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>算术左移：符号位不变，低位补0</li>
+<li>算术右移：低位溢出,符号位不变,并用符号位补溢出的高位</li>
+</ul>
+<h5 id="练习：-1"><a href="#练习：-1" class="headerlink" title="练习："></a>练习：</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1</span>&gt;&gt;<span class="number">2</span>;	<span class="comment">//a?</span></span><br><span class="line"><span class="type">int</span> b = <span class="number">-1</span>&gt;&gt;<span class="number">2</span>;	<span class="comment">//b?</span></span><br><span class="line"><span class="type">int</span> c = <span class="number">1</span>&lt;&lt;<span class="number">2</span>;	<span class="comment">//c?</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="程序流程控制介绍"><a href="#程序流程控制介绍" class="headerlink" title="程序流程控制介绍"></a>程序流程控制介绍</h3><ul>
+<li>在程序中，程序运行的流程控制决定程序是如何执行的，是我们必须掌握的主要有三大流程控制语句<ol>
+<li>顺序控制</li>
+<li>分支控制</li>
+<li>循环控制</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>顺序控制介绍：程序从上到下逐行的执行，中间没有任何判断和跳转。</p>
+</li>
+<li><p>分支控制if-else：</p>
+<ol>
+<li>单分支_if(){}</li>
+<li>双分支_if(){}else{}</li>
+<li>多分支_if()else if(){}else{}</li>
+</ol>
+</li>
+<li><p>switch分支结构：</p>
+<ol>
+<li>switch细节讨论<ol>
+<li>switch语句中的 expression是一个常量表达式，必须是一个整型(char、short, int, long等）或枚举类型</li>
+<li>case子句中的值必须是常量,而不能是变量</li>
+<li>default子句是可选的，当没有匹配的case时，执行default</li>
+<li>break语句用来在执行完一个case分支后使程序跳出switch语句块</li>
+<li>如果没有写break，会执行下一个case 语句块，直到遇到break或者执行到switch结尾，这个现象称为穿透。</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (表达式)&#123;</span><br><span class="line">	<span class="keyword">case</span> 常量<span class="number">1</span>：	<span class="comment">//当表达式值等于常量1时，执行语句块1</span></span><br><span class="line">        语句块<span class="number">1</span>；</span><br><span class="line">        <span class="keyword">break</span>;		<span class="comment">//退出switch</span></span><br><span class="line">     <span class="keyword">case</span> 常量<span class="number">2</span>：</span><br><span class="line">         语句块<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">break</span>;		<span class="comment">//如果没有break，就继续往下执行，直到遇到break退出</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">default</span>语句块;	<span class="comment">//当以上情况都不存在时，执行default语句块</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>switch和if的比较：</p>
+<ol>
+<li>如果判断的具体数值不多，而且符合整型、枚举类型。虽然两种语句都可以，但是还是建议使用switch语句。</li>
+<li>其他情况，对区间判断，对结果为真假的判断，使用if，if的使用范围更广。</li>
+</ol>
+</li>
+<li><p>for循环控制：</p>
+<ol>
+<li>循环条件是返回一个表示真(非0)假(0）的表达式</li>
+<li>for(;循环判断条件;）中的初始化和变量迭代可以不写（写到其它地方），但是两边的分号不能省略。</li>
+<li>循环初始值可以有多条初始化语句，但要求类型一样，并且中间用逗号隔开，循环变量迭代也可以有多条变量迭代语句，中间用逗号隔开。例子：for(i &#x3D; 0,j&#x3D; 0;j&lt; count; i++,j+&#x3D; 2）</li>
+</ol>
+</li>
+<li><p>while循环控制：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1</span>;	<span class="comment">//循环变量初始化;</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)&#123;	<span class="comment">//循环条件</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;halo&quot;</span>);	<span class="comment">//循环体;</span></span><br><span class="line">    i++;	<span class="comment">//循环变量迭代;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>do…while循环控制：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1</span>;	<span class="comment">//循环变量初始化</span></span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;halo&quot;</span>);	<span class="comment">//循环体(多条语句)</span></span><br><span class="line">        i++;			<span class="comment">//循环变量迭代</span></span><br><span class="line">    &#125;<span class="keyword">while</span>(i&lt;<span class="number">5</span>);	<span class="comment">//循环条件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多重循环控制：</p>
+<ol>
+<li>将一个循环放在另一个循环体内，就形成了嵌套循环。其中，for,while,do…while均可以作为外层循环和内层循环。建议一般使用两层，最多不要超过三层，太多了自己都看不懂。</li>
+<li>实质上，嵌套循环就是把内层循环当成外层循环的循环体。当只有内层循环的循环条件为false时，才会完全跳出内层循坏，才可结束外层的当次循环，开始下一次的循环。</li>
+<li>设外层循环次数为m次，内层为n次，则内层循环体实际上需要执行m*n&#x3D;mn次</li>
+</ol>
+</li>
+<li><p>跳转控制语句：</p>
+<ol>
+<li><p>break语句用于终止某个语句块的执行，一般使用在switch或者循环（三大循环中），可以理解为跳出此次循环，不继续执行。</p>
+</li>
+<li><p>continue语句用于结束本次循环，继续执行下一次循环。continue语句只能配合循环语句使用，不能单独和switch&#x2F;if使用。</p>
+</li>
+<li><p>goto语句可以无条件的转移到程序中指定的行。在c程序设计中一般不主张使用goto语句，以免造成程序的混乱，使理解和调试程序都产生困难。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">goto</span> label;		<span class="comment">//label名字自己取</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">lable:statement 	<span class="comment">//直接跳转到指定的这里，执行这里的语句块</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C%E8%AF%AD%E8%A8%80/">#C语言</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C语言基础知识_第二章</div>
+      <div>http://example.com/2022/11/21/C的知识-01/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/09/C%E7%9A%84%E7%9F%A5%E8%AF%86/" title="C语言基础知识">
+                        <span class="hidden-mobile">C语言基础知识</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
