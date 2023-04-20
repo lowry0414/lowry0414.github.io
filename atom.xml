@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://lowry0414.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://lowry0414.github.io/"/>
+  <updated>2023-04-20T11:49:52.532Z</updated>
+  <id>http://lowry0414.github.io/</id>
+  
+  <author>
+    <name>Lowry</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>why i sign up the blog?</title>
+    <link href="http://lowry0414.github.io/2023/04/20/post-title/"/>
+    <id>http://lowry0414.github.io/2023/04/20/post-title/</id>
+    <published>2023-04-20T11:48:51.000Z</published>
+    <updated>2023-04-20T11:49:52.532Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="For-Test"><a href="#For-Test" class="headerlink" title="For Test"></a>For Test</h1><h2 id="Why-I-sign-up-the-blog"><a href="#Why-I-sign-up-the-blog" class="headerlink" title="Why I sign up the blog ?"></a>Why I sign up the blog ?</h2><p>事实上，创建博客的初衷起于高中。当时我对科技特别感兴趣，当我看到别人有自己的公众号、网站、博客的时候，我也特别想拥有一个属于自己的公众发布平台。</p><p>因此，我就特地注册了微信公众号，还不止注册了一次。但是当我注册完后，新的问题又来了：怎么运营这个公众号？</p><p>当时的我并没有放太多心思在这上面，因此也就草草发了几篇文章和自己的摄影作品上去，之后就再没有去关注过了。</p><p>到了大学的时候，我学习了网页设计的相关知识，因此心里的那颗种子就愈发想发芽，但是奈何我并没有拥有太多相关知识(上课经常摸鱼)，有心无力。</p><p>等到前段时间，我实在是忍不住了，再难也要试一下。我就根据网上的教程，学习了如何利用GitHub和hexo框架来搭建属于自己的博客。</p><p>经过万般艰辛，终于……你们就看到了现在的页面。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;For-Test&quot;&gt;&lt;a href=&quot;#For-Test&quot; class=&quot;headerlink&quot; title=&quot;For Test&quot;&gt;&lt;/a&gt;For Test&lt;/h1&gt;&lt;h2 id=&quot;Why-I-sign-up-the-blog&quot;&gt;&lt;a href=&quot;#Why-I-s</summary>
+      
+    
+    
+    
+    
+    <category term="blog" scheme="http://lowry0414.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://lowry0414.github.io/2023/04/20/hello-world/"/>
+    <id>http://lowry0414.github.io/2023/04/20/hello-world/</id>
+    <published>2023-04-20T11:35:07.993Z</published>
+    <updated>2023-04-20T11:43:03.264Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
