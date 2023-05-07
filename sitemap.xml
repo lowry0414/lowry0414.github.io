@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lowry0414.github.io/2023/05/07/%E5%87%A0%E4%B8%AA%E6%8F%90%E5%8D%87%E7%94%9F%E6%B4%BB%E5%B9%B8%E7%A6%8F%E6%84%9F%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2023-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://lowry0414.github.io/2023/05/07/%E5%89%AA%E8%BE%91%E9%9F%B3%E6%95%88%E5%88%86%E4%BA%AB/</loc>
     
     <lastmod>2023-05-07</lastmod>
@@ -60,6 +69,20 @@
   
   <url>
     <loc>http://lowry0414.github.io/tags/bgm/</loc>
+    <lastmod>2023-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lowry0414.github.io/tags/%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2023-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lowry0414.github.io/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2023-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
